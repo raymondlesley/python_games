@@ -9,7 +9,7 @@ from pygame.locals import *
 from astro_pi import AstroPi
 
 FPS = 1.0    # game speed in Frames Per Second
-ACCEL = 0.1  # speed increase per apple
+ACCEL = 1.1  # rate of speed increase per apple
 WINDOWWIDTH = 8
 WINDOWHEIGHT = 8
 CELLSIZE = 1
@@ -104,7 +104,7 @@ def runGame():
             # don't remove worm's tail segment
             apple = getRandomLocation() # set a new apple somewhere
             # and go faster!
-            speed = speed + ACCEL
+            speed = speed * ACCEL
         else:
             del wormCoords[-1] # remove worm's tail segment
             # process "nom" timer
